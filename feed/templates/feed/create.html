@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Create a new post{% endblock title %}
+
+{% block body %}
+    <form method="POST" action=".">  
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <!-- component from https://tailwindcomponents.com/component/hover-button-effect-->
+            <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow my-3" type="submit">
+                <div class="absolute inset-0 w-3 bg-indigo-500 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                <span class="relative text-black group-hover:text-white">Create Post</span>
+            </button>
+        </div>
+    </form>
+{% endblock body %}
