@@ -18,8 +18,7 @@
             <span></span>
         {% endif %}
         <div>
-            {# TODO: add url below #}
-            <a class="flex items-center" href="#">
+            <a class="flex items-center" href="{% url 'profiles:detail' post.author.username %}">
 
                 {% thumbnail post.author.profile.image "300x373" crop="center" as im %}
                 <img class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block" src="{{ im.url }}" alt="avatar">
